@@ -76,11 +76,6 @@ stages:
               versionSpec: '20.9'
 
           - script: |
-              npm install
-              npm run build
-            displayName: 'npm install and build'
-
-          - script: |
               export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin
               node your-script.js
             displayName: 'Run Node.js script'
