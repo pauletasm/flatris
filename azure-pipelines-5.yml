@@ -70,14 +70,18 @@ stages:
       runOnce:
         deploy:
           steps:            
-          - task: NodeTool@0
+          - task: UseNode@1
             displayName: 'Install Node.js'
             inputs: 
-              versionSpec: '20.9'
+              version: '20'
+          
+          - script: |
+              npm install
+              npm run build
+            displayName: "npm run and build"
 
           - script: |
               export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin
-              node your-script.js
             displayName: 'Run Node.js script'
 
           - task: AzureWebApp@1
