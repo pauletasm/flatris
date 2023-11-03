@@ -21,7 +21,7 @@ variables:
   environmentName: 'teste-pauleta-app'
  
   # Agent VM image name
-  vmImageName: 'nginx:latest'
+  vmImageName: 'nginx-latest'
   
 stages:
 - stage: Archive
