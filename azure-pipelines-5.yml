@@ -76,8 +76,7 @@ stages:
               versionSpec: '20.9'
 
           - script: |
-              export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin
-              node your-script.js
+              export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin node your-script.js
             displayName: 'Run Node.js script'
 
           - task: AzureWebApp@1
