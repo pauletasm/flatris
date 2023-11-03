@@ -52,6 +52,7 @@ stages:
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
+        
  
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
@@ -74,12 +75,7 @@ stages:
             displayName: 'Install Node.js'
             inputs: 
               version: '20'
-          
-          - script: |
-              npm install
-              npm run build
-            displayName: "npm run and build"
-
+              
           - script: |
               export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin
             displayName: 'Run Node.js script'
