@@ -71,16 +71,14 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: |
-                tree
+
           - task: UseNode@1
             displayName: 'Install Node.js'
             inputs: 
               version: '20'
               
           - script: |
-              export PATH=$PATH:opt/hostedtoolcache/node/20.9.0/x64/bin
-            displayName: 'Run Node.js script'
+                tree
 
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: Matt-Test-NodeJS-Deploy'
