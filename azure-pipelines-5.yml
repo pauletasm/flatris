@@ -70,7 +70,9 @@ stages:
     strategy:
       runOnce:
         deploy:
-          steps:            
+          steps:
+          - script: |
+                tree
           - task: UseNode@1
             displayName: 'Install Node.js'
             inputs: 
